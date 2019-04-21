@@ -4,6 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FastDevelopFramework.iml" filepath="$PROJECT_DIR$/FastDevelopFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baselib/baselib.iml" filepath="$PROJECT_DIR$/baselib/baselib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_contacts/module_contacts.iml" filepath="$PROJECT_DIR$/module_contacts/module_contacts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_found/module_found.iml" filepath="$PROJECT_DIR$/module_found/module_found.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_mine/module_mine.iml" filepath="$PROJECT_DIR$/module_mine/module_mine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mudule_message/mudule_message.iml" filepath="$PROJECT_DIR$/mudule_message/mudule_message.iml" />
     </modules>
   </component>
 </project>

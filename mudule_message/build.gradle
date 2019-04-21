@@ -1,25 +1,44 @@
-apply plugin: 'com.android.application'
-
+if(Boolean.valueOf(rootProject.ext.isDebug)){
+    apply plugin: 'com.android.application'
+}else {
+    apply plugin: 'com.android.library'
+}
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
     buildToolsVersion rootProject.ext.versions.buildToolsVersion
 
     defaultConfig {
-        applicationId rootProject.ext.versions.applicationId
         minSdkVersion rootProject.ext.versions.minSdkVersion
         targetSdkVersion rootProject.ext.versions.targetSdkVersion
         versionCode rootProject.ext.versions.versionCode
         versionName rootProject.ext.versions.versionName
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //java插件引入了一个概念叫做SourceSets，通过修改SourceSets中的属性，可以指定哪些源文件
+    //（ 或文件夹下的源文件 ） 要被编译 ， 哪些源文件要被排除 。
+    sourceSets{
+        main{
+            if(Boolean.valueOf(rootProject.ext.isDebug)){
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            }else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    //排除java/debug文件夹下的所有文件
+                    exclude '*module'
+                }
+            }
         }
     }
 }
@@ -29,15 +48,5 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     androidTestImplementation rootProject.ext.dependencies["runner"]
     androidTestImplementation rootProject.ext.dependencies["espresso_core"]
-        if(Boolean.valueOf(rootProject.ext.isDebug)){
-            //公用依赖包
-            implementation project(':baselib')
-        }else {
-            implementation project(':module_contacts')
-            implementation project(':module_found')
-            implementation project(':module_mine')
-            implementation project(':mudule_message')
-        }
-
-
+    implementation project(':baselib')
 }
