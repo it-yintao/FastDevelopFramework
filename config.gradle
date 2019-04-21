@@ -29,7 +29,11 @@ ext{
             runnerVersion               :   "1.0.2",
             espressoVersion             :   "3.0.2",
             junitVersion                :   "4.12",
+            multidexVersion             : "1.0.2",
 
+            arouterApiVersion           : "1.4.0",
+            arouterCompilerVersion      : "1.2.1",
+            arouterannotationVersion    : "1.0.4",
 
     ]
     
@@ -43,6 +47,12 @@ ext{
             "junit"                     : "junit:junit:${versions["junitVersion"]}",
             "design"                    : "com.android.support:design:${versions["androidSupportSdkVersion"]}",
 
+            //方法数超过65535解决方法64K MultiDex分包方法
+            "multidex"                  : "com.android.support:multidex:${versions["multidexVersion"]}",
+            //路由
+            "arouter_api"               : "com.alibaba:arouter-api:${versions["arouterApiVersion"]}",
+            "arouter_compiler"          : "com.alibaba:arouter-compiler:${versions["arouterCompilerVersion"]}",
+            "arouter_annotation"        : "com.alibaba:arouter-annotation:${versions["arouterannotationVersion"]}",
     ]
 
 }

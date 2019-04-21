@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion rootProject.ext.versions.compileSdkVersion
@@ -11,6 +13,17 @@ android {
         versionName rootProject.ext.versions.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //MultiDex分包方法
+        multiDexEnabled true
+
+        //Arouter路由配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                includeCompileClasspath = true
+            }
+        }
 
     }
 
@@ -26,10 +39,18 @@ android {
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     api rootProject.ext.dependencies["appcompat_v7"]
     api rootProject.ext.dependencies["constraint_layout"]
     api rootProject.ext.dependencies["design"]
     api rootProject.ext.dependencies["junit"]
+
+    //MultiDex分包方法
+    api rootProject.ext.dependencies["multidex"]
+
+    //Arouter路由
+    annotationProcessor rootProject.ext.dependencies["arouter_compiler"]
+    api rootProject.ext.dependencies["arouter_api"]
+    api rootProject.ext.dependencies["arouter_annotation"]
 
 }
