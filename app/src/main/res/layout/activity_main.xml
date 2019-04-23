@@ -1,18 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+              android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+            android:id="@+id/tv_main"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="this is main app"
+        android:gravity="center_horizontal"/>
 
-</android.support.constraint.ConstraintLayout>
+   <Button
+           android:id="@+id/bt_to_contacts"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="跳转到contacts模块"
+           android:gravity="center_horizontal"/>
+
+    <Button
+            android:id="@+id/bt_to_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="跳转到found模块"
+            android:gravity="center_horizontal"/>
+    <Button
+            android:id="@+id/bt_to_mine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="跳转到mine模块"
+            android:gravity="center_horizontal"/>
+    <Button
+            android:id="@+id/bt_to_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="跳转到message模块"
+            android:gravity="center_horizontal"/>
+</LinearLayout>

@@ -2,7 +2,10 @@ package com.yt.baselib.base
 
 import android.app.Application
 import android.content.Context
+import android.support.multidex.MultiDex
+import com.alibaba.android.arouter.launcher.ARouter
 import com.yt.baselib.ActivityManage
+import com.yt.baselib.BuildConfig
 
 /**
  * @author :created by yt
@@ -10,7 +13,7 @@ import com.yt.baselib.ActivityManage
  * 邮箱:yintao_6666@126.com
  * @Describe :基础Application所有需要模块化开发的module都需要继承BaseApplication
  */
-class BaseApplication : Application() {
+open class BaseApplication : Application() {
     private var activityManage:ActivityManage? = null
 
     companion object {
@@ -29,12 +32,14 @@ class BaseApplication : Application() {
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
         application = this
+        //MultiDex分包方法，必须最先初始化
+        MultiDex.install(this)
 
     }
 
     override fun onCreate() {
         super.onCreate()
-
+        initARouter()
         activityManage = ActivityManage()
     }
 
@@ -46,6 +51,14 @@ class BaseApplication : Application() {
         exitApp()
     }
 
+
+    private fun initARouter(){
+        if (BuildConfig.DEBUG){
+            ARouter.openDebug() //打印日志
+            ARouter.openDebug() //开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
+        }
+        ARouter.init(application)//尽可能早，推荐在Application中初始化
+    }
     /**
      * 退出应用
      */

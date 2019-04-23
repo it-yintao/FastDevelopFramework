@@ -7,7 +7,7 @@ ext{
      * false 每个业务module以lib的方式运行
      * true 每个业务module可以独立运行
      */
-    isDebug = true
+    isDebug = false
 
     /**
      * 版本号
