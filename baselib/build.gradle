@@ -55,4 +55,7 @@ dependencies {
     api rootProject.ext.dependencies["arouter_api"]
     api rootProject.ext.dependencies["arouter_annotation"]
 
+    //沉浸栏
+    api rootProject.ext.dependencies["immersionbar"]
+
 }

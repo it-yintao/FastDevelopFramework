@@ -14,11 +14,12 @@ import com.yt.baselib.BuildConfig
  * @Describe :基础Application所有需要模块化开发的module都需要继承BaseApplication
  */
 open class BaseApplication : Application() {
-    private var activityManage:ActivityManage? = null
+
 
     companion object {
 
         private lateinit var  application:BaseApplication
+        private lateinit var activityManage: ActivityManage
         /**
          * 获取全局唯一上下文
          */
@@ -43,6 +44,10 @@ open class BaseApplication : Application() {
         activityManage = ActivityManage()
     }
 
+    fun getActivityManage():ActivityManage{
+            return activityManage
+    }
+
     /**
      * 程序终止的时候运行
      */
@@ -63,7 +68,7 @@ open class BaseApplication : Application() {
      * 退出应用
      */
     private fun exitApp(){
-        activityManage?.finishAll()
+        activityManage.finishAll()
         android.os.Process.killProcess(android.os.Process.myPid())
         System.exit(0)
     }

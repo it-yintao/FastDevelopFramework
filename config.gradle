@@ -35,6 +35,7 @@ ext{
             arouterCompilerVersion      : "1.2.1",
             arouterannotationVersion    : "1.0.4",
 
+            immersionbarVersion         : "2.3.2-beta05",
     ]
     
     dependencies =[
@@ -53,6 +54,13 @@ ext{
             "arouter_api"               : "com.alibaba:arouter-api:${versions["arouterApiVersion"]}",
             "arouter_compiler"          : "com.alibaba:arouter-compiler:${versions["arouterCompilerVersion"]}",
             "arouter_annotation"        : "com.alibaba:arouter-annotation:${versions["arouterannotationVersion"]}",
+
+            //沉浸式状态栏
+            "immersionbar"        : "com.gyf.immersionbar:immersionbar:${versions["immersionbarVersion"]}",
+
+
+
+
     ]
 
 }
