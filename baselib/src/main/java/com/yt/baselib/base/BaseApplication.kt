@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.support.multidex.MultiDex
 import com.alibaba.android.arouter.launcher.ARouter
-import com.yt.baselib.ActivityManage
+import com.yt.baselib.manage.ActivityManage
 import com.yt.baselib.BuildConfig
 
 /**
@@ -44,7 +44,7 @@ open class BaseApplication : Application() {
         activityManage = ActivityManage()
     }
 
-    fun getActivityManage():ActivityManage{
+    fun getActivityManage(): ActivityManage {
             return activityManage
     }
 

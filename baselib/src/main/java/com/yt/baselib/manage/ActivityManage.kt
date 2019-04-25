@@ -1,4 +1,4 @@
-package com.yt.baselib
+package com.yt.baselib.manage
 
 import android.app.Activity
 import java.util.HashSet
