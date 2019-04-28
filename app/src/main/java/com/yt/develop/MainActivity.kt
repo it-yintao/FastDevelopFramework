@@ -26,7 +26,7 @@ class MainActivity : BaseActivity(),View.OnClickListener {
         bt_to_mine.setOnClickListener(this)
         ctb_main
             .setCenterText("主界面")
-            .setCenterTextColor(ContextCompat.getColor(mContext,R.color.red))
+            .setCenterTextColor(R.color.red)
     }
 
     override fun onClick(v: View?) {

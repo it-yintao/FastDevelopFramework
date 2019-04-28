@@ -79,23 +79,26 @@ class CustomToolBar @JvmOverloads constructor(context: Context, attrs: Attribute
 
 
     fun setLeftTextColor(leftTextColor:Int):CustomToolBar{
-        this.leftTextColor = leftTextSize
+        this.leftTextColor = leftTextColor
+        left?.setTextColor(ContextCompat.getColor(context,leftTextColor))
         return this
     }
 
     fun setCenterTextColor(centerTextColor:Int):CustomToolBar{
         this.centerTextColor = centerTextColor
-        center?.setTextColor(centerTextColor)
+        center?.setTextColor(ContextCompat.getColor(context,centerTextColor))
         return this
     }
 
     fun setRightTextColor(rightTextColor: Int):CustomToolBar{
         this.rightTextColor = rightTextColor
+        right?.setTextColor(ContextCompat.getColor(context,rightTextColor))
         return this
     }
 
     fun setLeftTextSize(leftTextSize:Int):CustomToolBar{
         this.leftTextSize = leftTextSize
+        left?.textSize = leftTextSize.toFloat()
         return this
     }
 
@@ -107,6 +110,7 @@ class CustomToolBar @JvmOverloads constructor(context: Context, attrs: Attribute
 
     fun setRightTextSize(rightTextSize:Int):CustomToolBar{
         this.rightTextSize = rightTextSize
+        right?.textSize = rightTextSize.toFloat()
         return this
     }
 
