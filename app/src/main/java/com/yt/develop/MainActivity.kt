@@ -1,14 +1,11 @@
 package com.yt.develop
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
-import android.support.v4.content.ContextCompat
+
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.launcher.ARouter
 import com.yt.baselib.base.BaseActivity
 import com.yt.baselib.constants.RouterConstance
-import com.yt.baselib.widget.CustomToolBar
+
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,6 +21,7 @@ class MainActivity : BaseActivity(),View.OnClickListener {
         bt_to_found.setOnClickListener(this)
         bt_to_message.setOnClickListener(this)
         bt_to_mine.setOnClickListener(this)
+        initImmersionBar(R.color.white)
         ctb_main
             .setCenterText("主界面")
             .setCenterTextColor(R.color.red)

@@ -84,7 +84,8 @@ abstract class BaseActivity : AppCompatActivity() {
     protected fun initImmersionBar(color: Int){
         mImmersionBar = ImmersionBar.with(this)
         mImmersionBar?.statusBarColor(color)
-        mImmersionBar?.init()
+//        mImmersionBar?.init() //调用这个方法状态栏的字体颜色不会发生改变
+        mImmersionBar?.autoStatusBarDarkModeEnable(true, 0.2f)?.init()
     }
 
     //获取布局文件

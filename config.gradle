@@ -35,7 +35,7 @@ ext{
             arouterCompilerVersion      : "1.2.1",
             arouterannotationVersion    : "1.0.4",
 
-            immersionbarVersion         : "2.3.2-beta05",
+            immersionbarVersion         : "2.3.3",
     ]
     
     dependencies =[
