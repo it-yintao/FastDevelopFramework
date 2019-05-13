@@ -15,7 +15,7 @@ android {
         targetSdkVersion rootProject.ext.versions.targetSdkVersion
         versionCode rootProject.ext.versions.versionCode
         versionName rootProject.ext.versions.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         //MultiDex分包方法
         multiDexEnabled true
@@ -28,7 +28,10 @@ android {
             }
         }
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -64,4 +67,6 @@ dependencies {
     //ARouter路由(这个地方需要注意一下，
     // 如果是java，则用annotationProcessor，kotlin则用kapt，不然会找不到路径)
     kapt rootProject.ext.dependencies["arouter_compiler"]
+    //Room
+    kapt rootProject.ext.dependencies["room_compiler"]
 }

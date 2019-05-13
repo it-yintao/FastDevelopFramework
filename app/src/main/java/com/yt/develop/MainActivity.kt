@@ -34,7 +34,8 @@ class MainActivity : BaseActivity(),View.OnClickListener {
             }
 
             R.id.bt_to_found ->{
-                ARouterUtil.startActivity(RouterConstance.FOUND_ACTIVITY_URL_MAIN)
+                   ARouterUtil.startActivity(RouterConstance.FOUND_ACTIVITY_URL_MAIN)
+
             }
             R.id.bt_to_message -> {
                 ARouterUtil.startActivity(RouterConstance.MESSAGE_ACTIVITY_URL_MAIN)

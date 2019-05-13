@@ -13,7 +13,7 @@ android {
         versionCode rootProject.ext.versions.versionCode
         versionName rootProject.ext.versions.versionName
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         //MultiDex分包方法
         multiDexEnabled true
@@ -33,6 +33,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 
 }
@@ -58,4 +62,24 @@ dependencies {
     //沉浸栏
     api rootProject.ext.dependencies["immersionbar"]
 
+
+
+    //rxjava2
+    api rootProject.ext.dependencies["rxandroid2"]
+    api rootProject.ext.dependencies["rxjava2"]
+
+
+    //如果将数据层提取出来，那么baseLib就不需要依赖这些库了
+    //网络请求
+    api rootProject.ext.dependencies["retrofit2"]
+    api rootProject.ext.dependencies["retrofit2_converter_gson"]
+    api rootProject.ext.dependencies["retrofit2_adapter_rxjava"]
+    api rootProject.ext.dependencies["okhttp3"]
+    api rootProject.ext.dependencies["okhttp3_logging_interceptor"]
+
+    //Room
+    kapt rootProject.ext.dependencies["room_compiler"]
+    api rootProject.ext.dependencies["room"]
+    api rootProject.ext.dependencies["room_rxjava2"]
+    //========================
 }

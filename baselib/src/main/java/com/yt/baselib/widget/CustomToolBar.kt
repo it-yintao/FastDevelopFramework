@@ -4,7 +4,7 @@ package com.yt.baselib.widget
 import android.app.Activity
 import android.content.Context
 import android.graphics.Canvas
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
