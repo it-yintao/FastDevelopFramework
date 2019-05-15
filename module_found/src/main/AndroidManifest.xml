@@ -3,7 +3,7 @@
           package="com.yt.found">
 
     <application>
-        <activity android:name=".FoundMainActivity"/>
+        <activity android:name=".view.FoundEnterActivity"/>
     </application>
 
 </manifest>

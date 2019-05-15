@@ -4,44 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-              android:orientation="vertical"
+    android:orientation="vertical"
     tools:context=".MainActivity"
-android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true">
     <com.yt.baselib.widget.CustomToolBar
             android:id="@+id/ctb_main"
             android:layout_width="match_parent"
             android:layout_height="@dimen/y50"/>
 
-    <TextView
-            android:id="@+id/tv_main"
+<RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="this is main app"
-        android:gravity="center_horizontal"/>
+        android:layout_height="match_parent">
+    <com.yt.baselib.widget.StrongRadioGroup
+    android:id="@+id/src_main"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y50"
+    android:layout_alignParentBottom="true"
+    android:gravity="center_vertical">
+        <RelativeLayout
+                android:layout_marginTop="@dimen/y2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-   <Button
-           android:id="@+id/bt_to_contacts"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="跳转到contacts模块"
-           android:gravity="center_horizontal"/>
+            <RadioButton
+                    android:id="@+id/rb_msg"
+                    style="@style/mainTabStyle"
+                    android:layout_centerInParent="true"
+                    android:checked="true"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/main_tab_home"
+                    android:drawablePadding="-2dp"
+                    android:text="消息" />
 
-    <Button
-            android:id="@+id/bt_to_found"
+            <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_toRightOf="@id/rb_msg"
+                    android:background="@drawable/market_shape_round_red"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textColor="#ffffff"
+                    android:textSize="8sp" />
+
+        </RelativeLayout>
+
+        <RadioButton
+                android:id="@+id/rb_cont"
+                style="@style/mainTabStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:drawablePadding="-2dp"
+                android:drawableTop="@drawable/main_tab_center"
+                android:text="通讯录" />
+        <RadioButton
+                android:id="@+id/rb_found"
+                style="@style/mainTabStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:drawablePadding="-2dp"
+                android:drawableTop="@drawable/main_tab_center"
+                android:text="发现" />
+        <RadioButton
+                android:id="@+id/rb_user"
+                style="@style/mainTabStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:drawablePadding="-2dp"
+                android:drawableTop="@drawable/main_tab_user"
+                android:text="我" />
+    </com.yt.baselib.widget.StrongRadioGroup>
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_main"
+            android:layout_above="@+id/src_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="跳转到found模块"
-            android:gravity="center_horizontal"/>
-    <Button
-            android:id="@+id/bt_to_mine"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="跳转到mine模块"
-            android:gravity="center_horizontal"/>
-    <Button
-            android:id="@+id/bt_to_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="跳转到message模块"
-            android:gravity="center_horizontal"/>
+            android:layout_height="match_parent">
+
+    </androidx.viewpager.widget.ViewPager>
+</RelativeLayout>
+
 </LinearLayout>

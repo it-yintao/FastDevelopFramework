@@ -1,0 +1,8 @@
+<resources>
+
+
+    <!--设置整个应用主题，统一样式，自定义toolBar-->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar"/>
+
+
+</resources>

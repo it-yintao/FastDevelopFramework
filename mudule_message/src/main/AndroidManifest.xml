@@ -3,7 +3,7 @@
           package="com.yt.message">
 
     <application>
-        <activity android:name="com.yt.message.MsgMainActivity"/>
+        <activity android:name="com.yt.message.view.MsgEnterActivity"/>
     </application>
 
 </manifest>

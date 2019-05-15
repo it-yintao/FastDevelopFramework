@@ -3,7 +3,7 @@
           package="com.yt.mine">
 
     <application>
-        <activity android:name=".MineMainActivity"/>
+        <activity android:name=".view.MineEnterActivity"/>
     </application>
 
 </manifest>
