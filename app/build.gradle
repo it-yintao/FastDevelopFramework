@@ -50,14 +50,14 @@ dependencies {
     //MultiDex分包方法
     api rootProject.ext.dependencies["multidex"]
     //公用依赖包
-    implementation project(':baselib')
+//    implementation project(':baselib')
         if(!Boolean.valueOf(rootProject.ext.isDebug)){
             implementation project(':module_contacts')
             implementation project(':module_found')
             implementation project(':module_mine')
             implementation project(':mudule_message')
         }else {
-
+            implementation project(':baselib')
         }
 
     //ARouter路由(这个地方需要注意一下，

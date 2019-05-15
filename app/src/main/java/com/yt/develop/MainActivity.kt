@@ -1,6 +1,7 @@
 package com.yt.develop
 
 
+
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.alibaba.android.arouter.facade.annotation.Route
@@ -31,17 +32,6 @@ class MainActivity : BaseActivity(){
         fragmentList.add(3,userFragment)
 
     }
-//    private val fragmentList :MutableList<Fragment> = ArrayList()
-//    lateinit var homeFragmentPagerAdapter:HomeFragmentPagerAdapter
-//     //消息
-//    val msgFragment = ARouterUtil.getFragment(RouteConstance.MESSAGE_FRAGMENT_URL_ENTER)
-//    //通讯录
-//    val conFragment = ARouterUtil.getFragment(RouteConstance.CONTACTS_FRAGMENT_URL_ENTER)
-//    //发现模块
-//    val foundFragment = ARouterUtil.getFragment(RouteConstance.FOUND_FRAGMENT_URL_ENTER)
-//    //用户某块
-//    val userFragment = ARouterUtil.getFragment(RouteConstance.MINE_FRAGMENT_URL_ENTER)
-
     override fun getLayoutId(): Int {
         return R.layout.activity_main
     }
@@ -69,13 +59,6 @@ class MainActivity : BaseActivity(){
 
 
         }
-
-//
-//        fragmentList.add(0,msgFragment)
-//        fragmentList.add(1,conFragment)
-//        fragmentList.add(2,foundFragment)
-//        fragmentList.add(3,userFragment)
-
 
         homeFragmentPagerAdapter = HomeFragmentPagerAdapter(supportFragmentManager,fragmentList)
 
